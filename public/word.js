@@ -38,6 +38,7 @@ function sleepFor(sleepDuration){
 generateNewWords();
 
 const working=()=>{
+    
     for(var h=0;h<final.length;h++){
         if(finalDict.hasOwnProperty(final[h])==false){
             finalDict[final[h]]=1;
@@ -48,7 +49,7 @@ const working=()=>{
     }
     console.log(finalDict);
     document.addEventListener("keydown",function(e){
-        if(i<=30&&j==0){
+        if(i<30&&j==0){
             if(e.keyCode>=65&&e.keyCode<=122)
             {
                 i++;
@@ -124,6 +125,7 @@ const working=()=>{
                     }
                     word='';
                     console.log("algorithm")
+                
                 }
                 else{
                     word=''
@@ -135,6 +137,10 @@ const working=()=>{
                     }
                     j=0;
                     
+                }
+                if(j==0 && i==30){
+                    document.querySelector("#ans").textContent=final.toLowerCase();
+                    document.querySelector("#ans").classList.remove('visibility');
                 }
                 
             }

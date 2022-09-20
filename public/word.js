@@ -8,23 +8,6 @@ var final;
 finalDict={};
 var wordlist
 
-const generateNewWords=()=>{
-    //generate random word
-    const prom=fetch("https://raw.githubusercontent.com/SanjithRaghav/Wordle-/main/dataset/words.json")
-    prom.then(res=>res.json()).then((data)=>{var dataset=data;
-    wordlist=dataset['word']})
-    setTimeout(() => { console.log(wordlist)
-        var n=Math.floor(Math.random()*300)
-        final=wordlist[n]
-        final=final.toUpperCase();
-        console.log(final)
-        working();}, 2000);
-
-    // const response = await fetch('https://raw.githubusercontent.com/SanjithRaghav/Wordle-/main/dataset/words.json');
-    // const json = await response.json();
-    
-    
-}
 
 
 function sleepFor(sleepDuration){
@@ -35,7 +18,7 @@ function sleepFor(sleepDuration){
 }
 
 
-generateNewWords();
+
 
 const working=()=>{
     
@@ -153,3 +136,24 @@ const working=()=>{
     });
     
 }
+
+
+const generateNewWords=()=>{
+    //generate random word
+    const prom=fetch("https://raw.githubusercontent.com/SanjithRaghav/Wordle-/main/dataset/words.json")
+    prom.then(res=>res.json()).then((data)=>{var dataset=data;
+    wordlist=dataset['word']})
+    // setTimeout(() => { console.log(wordlist)
+    //     var n=Math.floor(Math.random()*300)
+    //     final=wordlist[n]
+    //     final=final.toUpperCase();
+    //     console.log(final)
+    //     working();}, 2000);
+
+    // const response = await fetch('https://raw.githubusercontent.com/SanjithRaghav/Wordle-/main/dataset/words.json');
+    // const json = await response.json();
+    final=document.getElementById('ans').textContent;
+    working();
+}
+
+generateNewWords();

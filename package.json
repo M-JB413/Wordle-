@@ -14,5 +14,14 @@
     "express": "^4.18.1",
     "random-word": "^2.0.0",
     "random-words": "^1.1.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/M-JB413/Wordle-.git"
+  },
+  "bugs": {
+    "url": "https://github.com/M-JB413/Wordle-/issues"
+  },
+  "homepage": "https://github.com/M-JB413/Wordle-#readme"
 }

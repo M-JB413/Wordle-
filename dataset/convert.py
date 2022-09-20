@@ -1,8 +1,4 @@
 import json
-
-
-import json
-
 from black import out
 
 filename='word.txt'

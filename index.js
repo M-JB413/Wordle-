@@ -1,10 +1,11 @@
 const express = require('express');
 const app=express();
 const bodyParser = require('body-parser');
-app.set('view engine', 'ejs');
-app.listen(3000);
-app.use(express.static('public'));
 const wd=require("random-words");
+
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+
 var n;
 
 
@@ -16,3 +17,5 @@ app.get('/', (req, res) => {
     console.log(final);
     res.render('list',{word:final})
 })
+
+app.listen(process.env.PORT || 3000);
